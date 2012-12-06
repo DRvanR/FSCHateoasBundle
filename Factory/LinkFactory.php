@@ -31,7 +31,7 @@ class LinkFactory extends AbstractLinkFactory implements LinkFactoryInterface
         }
 
         $classMetadata = $this->metadataFactory->getMetadata($object);
-        if (count($classMetadata->getRelations()) === 0) {
+        if ($classMetadata === null || count($classMetadata->getRelations()) === 0) {
             return;
         }
 
